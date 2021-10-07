@@ -1,16 +1,15 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
+#include "CharRenderer.h"
+#include "GameObject.h"
 #include "InputChecking.h"
-#include "Vector2.h"
 
-class Snake 
+class Snake : public GameObject, public CharRenderer
 {
 private:
 	bool	m_isAlive;
-	char	m_snakeChar;
 	DirectionInputs m_inputDirection;
-	Vector2 m_position;
 
 public:
 	Snake();
@@ -19,10 +18,8 @@ public:
 
 	void CheckInput();
 	void Move( DirectionInputs m_inputDirection );
-	void Update();
+	virtual void Update() override;
 
-	Vector2 getMoveDirection();
-	void setMoveDirection( Vector2 direction );
 
 	bool getIsAlive();
 	void setIsAlive();

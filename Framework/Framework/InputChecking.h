@@ -6,7 +6,7 @@ enum class DirectionInputs
 	Up,
 	Down,
 	Left,
-	Right,
+	Right
 };
 
 #endif // !INPUTCHECKING_H

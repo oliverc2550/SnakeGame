@@ -31,3 +31,14 @@ void Vector2::setY( int yValue )
 {
 	m_y = yValue;
 }
+
+Vector2 Vector2::getVector2( )
+{
+	return Vector2( getX(), getY());
+}
+
+void Vector2::setVector2( int x, int y )
+{
+	m_x = x;
+	m_y = y;
+}

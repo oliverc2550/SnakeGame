@@ -12,7 +12,7 @@ Game::Game()
 void Game::run()
 {
 	//int xpos = 0;
-	//m_snake.setPosition( 20, 20 );
+	m_snake.setPosition(Vector2(20, 20));
 
 	// Game loop
 	while( true )
