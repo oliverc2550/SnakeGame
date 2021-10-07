@@ -131,11 +131,11 @@
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CharRenderer.h" />
+    <ClInclude Include="CharObject.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Helpers.h" />
-    <ClInclude Include="InputChecking.h" />
+    <ClInclude Include="Direction.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeSegment.h" />
     <ClInclude Include="Vector2.h" />

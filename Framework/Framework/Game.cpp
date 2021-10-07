@@ -12,7 +12,7 @@ Game::Game()
 void Game::run()
 {
 	//int xpos = 0;
-	m_snake.setPosition(Vector2(20, 20));
+	//m_snake.setPosition(Vector2(20, 20));
 
 	// Game loop
 	while( true )
@@ -20,7 +20,7 @@ void Game::run()
 		// Clear the screen
 		system( "cls" );
 
-		m_snake.Update();
+		m_snake.update();
 		//drawChar( 'S', Vector2(xpos, 20) );
 
 		//m_snake.move( )

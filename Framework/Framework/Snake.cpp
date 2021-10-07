@@ -6,92 +6,115 @@
 Snake::Snake()
 {
 	m_isAlive = true;
-	m_characterToRender = 'S';
 	//m_inputDirection = DirectionInputs::Right;
-	m_position = Vector2( 0, 0 );
-	Render( m_characterToRender, m_position );
+	m_snakeSegments[ 0 ] = SnakeSegment( );
+	m_snakeSegments[ 1 ] = SnakeSegment( );
+	m_snakeSegments[ 2 ] = SnakeSegment( );
+	m_snakeSegments[ 3 ] = SnakeSegment( );
+	m_snakeSegments[ 4 ] = SnakeSegment( );
+	m_snakeSegments[ 5 ] = SnakeSegment( );
 }
 
 Snake::Snake( int xPos, int yPos )
 {
 	m_isAlive = true;
-	m_characterToRender = 'S';
 	//m_inputDirection = DirectionInputs::Right;
-	m_position = Vector2( xPos, yPos );
-	Render( m_characterToRender, m_position );
+	Vector2 startingPosition = Vector2( xPos, yPos );
+	m_snakeSegments[ 0 ] = SnakeSegment( startingPosition, 'S' );
+	m_snakeSegments[ 1 ] = SnakeSegment( startingPosition, 'S' );
+	m_snakeSegments[ 2 ] = SnakeSegment( startingPosition, 'S' );
+	m_snakeSegments[ 3 ] = SnakeSegment( startingPosition, 'S' );
+	m_snakeSegments[ 4 ] = SnakeSegment( startingPosition, 'S' );
+	m_snakeSegments[ 5 ] = SnakeSegment( startingPosition, 'S' );
 }
 
 Snake::~Snake()
 {
 }
 
-void Snake::CheckInput()
+void Snake::checkInput()
 {
 	if ( GetAsyncKeyState( 0x41 ) & 1 )
 	{
-		m_inputDirection = DirectionInputs::Left;
+		m_inputDirection = Direction::Left;
 	}
 	if ( GetAsyncKeyState( 0x44 ) & 1 )
 	{
-		m_inputDirection = DirectionInputs::Right;
+		m_inputDirection = Direction::Right;
 	}
 	if ( GetAsyncKeyState( 0x57 ) & 1 )
 	{
-		m_inputDirection = DirectionInputs::Up;
+		m_inputDirection = Direction::Up;
 	}
 	if ( GetAsyncKeyState( 0x53 ) & 1 )
 	{
-		m_inputDirection = DirectionInputs::Down;
+		m_inputDirection = Direction::Down;
 	}
 }
 
-void Snake::Move( DirectionInputs m_inputDirection )
+void Snake::move( Direction m_inputDirection )
 {
-	int xPos = m_position.getX();
-	int yPos = m_position.getY();
+	int xPos = m_snakeSegments[ 0 ].getPosition( ).getX( );
+	int yPos = m_snakeSegments[ 0 ].getPosition( ).getY();
 
 	switch (m_inputDirection)
 	{
-		case DirectionInputs::Right:
+		case Direction::Right:
 			{
 				std::cout << "D key pressed\n";
 				xPos++;
-				m_position.setX( xPos );
+				//m_snakeSegments[ 0 ].setPosition( Vector2( xPos, yPos ) );
+				//currentPosition.setX( xPos );
 			}
 			break;
 
-		case DirectionInputs::Left: 
+		case Direction::Left: 
 			{
 				std::cout << "A key pressed\n";
 				xPos--;
-				m_position.setX( xPos );
+				//m_snakeSegments[ 0 ].setPosition( Vector2( xPos, yPos ) );
+				//currentPosition.setX( xPos );
 			}
 			break;
 
-		case DirectionInputs::Up:
+		case Direction::Up:
 			{
 				std::cout << "W key pressed\n";
 				yPos--;
-				m_position.setY( yPos );
+				//m_snakeSegments[ 0 ].setPosition( Vector2( xPos, yPos ) );
+				//currentPosition.setY( yPos );
 			}
 			break;
 
-		case DirectionInputs::Down:
+		case Direction::Down:
 			{
 				std::cout << "S key pressed\n";
 				yPos++;
-				m_position.setY( yPos );
+				//m_snakeSegments[ 0 ].setPosition( Vector2( xPos, yPos ) );
+				//currentPosition.setY( yPos );
 			}
 			break;
 	}
+	for (int i = m_length - 1; i > 0; i--)
+	{
+		m_snakeSegments[ i ].moveTo( m_snakeSegments[ i - 1 ] );
+	}
+	m_snakeSegments[ 0 ].setPosition( Vector2( xPos, yPos ) );
 }
 
-void Snake::Update()
+void Snake::update()
 {
-	GameObject::Update( );
-	CheckInput( );
-	Move( m_inputDirection );
-	Render( m_characterToRender, m_position );
+	checkInput( );
+	move( m_inputDirection );
+	drawSegments( );
+}
+
+void Snake::drawSegments( )
+{
+	for( int i = 0; i < m_length; i++)
+	{
+		m_snakeSegments[ i ].draw( );
+	}
 }
 
 bool Snake::getIsAlive()

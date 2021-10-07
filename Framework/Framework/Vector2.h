@@ -17,7 +17,6 @@ public:
 	int getY();
 	void setY( int yValue );
 
-	Vector2 getVector2( );
 	void setVector2( int x, int y );
 
 

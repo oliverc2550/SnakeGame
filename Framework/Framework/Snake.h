@@ -1,24 +1,26 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
-#include "CharRenderer.h"
-#include "GameObject.h"
-#include "InputChecking.h"
+#include "Direction.h"
+#include "SnakeSegment.h"
 
-class Snake : public GameObject, public CharRenderer
+class Snake
 {
 private:
 	bool	m_isAlive;
-	DirectionInputs m_inputDirection;
+	int m_length = 6;
+	Direction m_inputDirection;
+	SnakeSegment m_snakeSegments[ 6 ]; //TODO: Remove magic number
 
 public:
 	Snake();
 	Snake( int xPos, int yPos );
 	~Snake();
 
-	void CheckInput();
-	void Move( DirectionInputs m_inputDirection );
-	virtual void Update() override;
+	void checkInput();
+	void move( Direction m_inputDirection );
+	void update();
+	void drawSegments( );
 
 
 	bool getIsAlive();

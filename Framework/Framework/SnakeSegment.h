@@ -1,21 +1,20 @@
 #ifndef SNAKESEGMENT_H
 #define SNAKESEGMENT_H
 
-#include "CharRenderer.h"
-#include "GameObject.h"
+#include "CharObject.h"
 
-class SnakeSegment : public GameObject, public CharRenderer
+class SnakeSegment : public CharObject
 {
 private:
 
 
 public:
 	SnakeSegment( );
-	SnakeSegment( Vector2 position, char character );
+	SnakeSegment( Vector2 &position, char character );
 	~SnakeSegment( );
 
-	void MoveTo( SnakeSegment previousSegment );
-	virtual void Update( ) override;
+	void moveTo( SnakeSegment previousSegment );
+	virtual void update( ) override;
 
 };
 

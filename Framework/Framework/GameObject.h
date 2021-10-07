@@ -9,10 +9,10 @@ protected:
 	Vector2 m_position;
 
 public:
-	Vector2 getPosition( ) { return Vector2( ); };
+	Vector2 getPosition( ) { return m_position; };
 	void setPosition( Vector2 position ) { m_position = position; };
 
-	virtual void Update( ) { };
+	virtual void update( ) { };
 };
 
 
