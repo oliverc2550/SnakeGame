@@ -6,7 +6,6 @@
 Snake::Snake()
 {
 	m_isAlive = true;
-	//m_inputDirection = DirectionInputs::Right;
 	m_snakeSegments[ 0 ] = SnakeSegment( );
 	m_snakeSegments[ 1 ] = SnakeSegment( );
 	m_snakeSegments[ 2 ] = SnakeSegment( );
@@ -18,7 +17,6 @@ Snake::Snake()
 Snake::Snake( int xPos, int yPos )
 {
 	m_isAlive = true;
-	//m_inputDirection = DirectionInputs::Right;
 	Vector2 startingPosition = Vector2( xPos, yPos );
 	m_snakeSegments[ 0 ] = SnakeSegment( startingPosition, 'S' );
 	m_snakeSegments[ 1 ] = SnakeSegment( startingPosition, 'S' );
@@ -36,19 +34,31 @@ void Snake::checkInput()
 {
 	if ( GetAsyncKeyState( 0x41 ) & 1 )
 	{
-		m_inputDirection = Direction::Left;
+		if( m_inputDirection != Direction::Right )
+		{
+			m_inputDirection = Direction::Left;
+		}
 	}
 	if ( GetAsyncKeyState( 0x44 ) & 1 )
 	{
-		m_inputDirection = Direction::Right;
+		if( m_inputDirection != Direction::Left )
+		{
+			m_inputDirection = Direction::Right;
+		}
 	}
 	if ( GetAsyncKeyState( 0x57 ) & 1 )
 	{
-		m_inputDirection = Direction::Up;
+		if( m_inputDirection != Direction::Down )
+		{
+			m_inputDirection = Direction::Up;
+		}
 	}
 	if ( GetAsyncKeyState( 0x53 ) & 1 )
 	{
-		m_inputDirection = Direction::Down;
+		if( m_inputDirection != Direction::Up )
+		{
+			m_inputDirection = Direction::Down;
+		}
 	}
 }
 
@@ -63,8 +73,6 @@ void Snake::move( Direction m_inputDirection )
 			{
 				std::cout << "D key pressed\n";
 				xPos++;
-				//m_snakeSegments[ 0 ].setPosition( Vector2( xPos, yPos ) );
-				//currentPosition.setX( xPos );
 			}
 			break;
 
@@ -72,8 +80,6 @@ void Snake::move( Direction m_inputDirection )
 			{
 				std::cout << "A key pressed\n";
 				xPos--;
-				//m_snakeSegments[ 0 ].setPosition( Vector2( xPos, yPos ) );
-				//currentPosition.setX( xPos );
 			}
 			break;
 
@@ -81,8 +87,6 @@ void Snake::move( Direction m_inputDirection )
 			{
 				std::cout << "W key pressed\n";
 				yPos--;
-				//m_snakeSegments[ 0 ].setPosition( Vector2( xPos, yPos ) );
-				//currentPosition.setY( yPos );
 			}
 			break;
 
@@ -90,8 +94,6 @@ void Snake::move( Direction m_inputDirection )
 			{
 				std::cout << "S key pressed\n";
 				yPos++;
-				//m_snakeSegments[ 0 ].setPosition( Vector2( xPos, yPos ) );
-				//currentPosition.setY( yPos );
 			}
 			break;
 	}
