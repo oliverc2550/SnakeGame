@@ -7,10 +7,11 @@
 class Snake
 {
 private:
-	bool	m_isAlive;
-	int m_length = 6;
+	bool m_isAlive;
+	char m_segmentChar = 'S';
+	int m_length = 1;
 	Direction m_inputDirection;
-	SnakeSegment m_snakeSegments[ 6 ]; //TODO: Remove magic number
+	SnakeSegment m_segments[ 100 ]; //TODO: Remove magic number
 
 public:
 	Snake();
@@ -20,8 +21,11 @@ public:
 	void checkInput();
 	void move( Direction m_inputDirection );
 	void update();
+	void addSegments( );
+	void detectSegments( );
 	void drawSegments( );
 
+	Vector2 getHeadPosition( );
 
 	bool getIsAlive();
 	void setIsAlive();

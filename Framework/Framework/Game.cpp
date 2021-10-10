@@ -9,26 +9,37 @@ Game::Game()
 {
 }
 
+void Game::checkCollisions( )
+{
+	if (m_snake.getHeadPosition() == m_fruit.getPosition())
+	{
+		m_snake.addSegments( );
+		m_fruit.eaten( );
+	}
+}
+
+void Game::update( )
+{
+	m_snake.update( );
+	m_fruit.update( );
+	checkCollisions( );
+}
+
 void Game::run()
 {
-	//int xpos = 0;
-	//m_snake.setPosition(Vector2(20, 20));
+	m_fruit.setPosition( Vector2( 25, 25 ) );
 
 	// Game loop
-	while( true )
+	while( m_snake.getIsAlive() == true )
 	{
 		// Clear the screen
 		system( "cls" );
 
-		m_snake.update();
-		//drawChar( 'S', Vector2(xpos, 20) );
+		update( );
 
-		//m_snake.move( )
-		//update();
-		//render();
+		Sleep( 250 );
 
-		Sleep( 1000 );
-
-		//xpos++;
 	}
+	system( "cls" );
+	std::cout << "snek ded";
 }

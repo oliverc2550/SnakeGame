@@ -11,13 +11,15 @@ public:
 	Vector2();
 	Vector2( int x, int y );
 
+	bool operator==( Vector2 vector2 );
+
 	int getX();
 	void setX( int xValue );
 
 	int getY();
 	void setY( int yValue );
 
-	void setVector2( int x, int y );
+	void set( int x, int y );
 
 
 };

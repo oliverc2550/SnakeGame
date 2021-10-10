@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Fruit.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Helpers.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -132,10 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CharObject.h" />
+    <ClInclude Include="Fruit.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="Direction.h" />
+    <ClInclude Include="RandomIntGenerator.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeSegment.h" />
     <ClInclude Include="Vector2.h" />
