@@ -12,7 +12,7 @@ Vector2::Vector2( int x, int y )
 	m_y = y;
 }
 
-bool Vector2::operator==( Vector2 vector2 )
+bool Vector2::operator==( Vector2 vector2 ) //TODO: Reference param
 {
 	if( m_x == vector2.getX( ) && m_y == vector2.getY( ) )
 	{

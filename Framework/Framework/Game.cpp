@@ -35,7 +35,7 @@ void Game::run()
 		// Clear the screen
 		system( "cls" );
 
-		update( );
+		update( ); //TODO: seperate update and redner
 
 		Sleep( 250 );
 

@@ -31,7 +31,7 @@ void Fruit::respawn( )
 {
 	if (m_hasBeenEaten == true)
 	{
-		m_position = Vector2( getRandomInt( 30 ), getRandomInt( 30 ) ); //TODO: Remove magic numbers
+		m_position = Vector2( getRandomInt( 30 ), getRandomInt( 30 ) ); //TODO: Remove magic numbers Settings.H for const numbers
 		m_hasBeenEaten = false;
 	}
 }

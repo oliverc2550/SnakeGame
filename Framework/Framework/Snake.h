@@ -11,6 +11,7 @@ private:
 	char m_segmentChar = 'S';
 	int m_length = 1;
 	Direction m_inputDirection;
+	//TODO: create snake head and snake tail tail has multiple snake segments
 	SnakeSegment m_segments[ 100 ]; //TODO: Remove magic number
 
 public:

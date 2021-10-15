@@ -13,7 +13,7 @@ public:
 	SnakeSegment( Vector2 &position, char character );
 	~SnakeSegment( );
 
-	void moveTo( SnakeSegment previousSegment );
+	void moveTo( SnakeSegment previousSegment ); //TODO: reference param
 	virtual void update( ) override;
 
 };

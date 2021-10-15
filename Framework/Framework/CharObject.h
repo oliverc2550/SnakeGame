@@ -13,6 +13,7 @@ public:
 	char getCharacter( ) { return m_characterToRender; };
 	void setCharacter( char character ) { m_characterToRender = character; };
 
+	//TODO: move to cpp
 	virtual void update( ) override { GameObject::update( ); };
 	void draw( ) { drawChar( m_characterToRender, m_position); };
 };
