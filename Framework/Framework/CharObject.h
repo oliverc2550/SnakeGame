@@ -10,12 +10,12 @@ protected:
 	char m_characterToRender;
 
 public:
-	char getCharacter( ) { return m_characterToRender; };
+	char getCharacter( ) const { return m_characterToRender; };
 	void setCharacter( char character ) { m_characterToRender = character; };
 
-	//TODO: move to cpp
-	virtual void update( ) override { GameObject::update( ); };
-	void draw( ) { drawChar( m_characterToRender, m_position); };
+	virtual void update( ) override;
+	virtual void render( );
+	void draw( );
 };
 
 

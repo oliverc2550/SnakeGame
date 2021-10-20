@@ -22,13 +22,14 @@ public:
 	void checkInput();
 	void move( Direction m_inputDirection );
 	void update();
+	void render( );
 	void addSegments( );
 	void detectSegments( );
 	void drawSegments( );
 
-	Vector2 getHeadPosition( );
+	Vector2 getHeadPosition( ) const;
 
-	bool getIsAlive();
+	bool getIsAlive() const;
 	void setIsAlive();
 };
 

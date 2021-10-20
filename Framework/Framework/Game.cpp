@@ -14,7 +14,7 @@ void Game::checkCollisions( )
 	if (m_snake.getHeadPosition() == m_fruit.getPosition())
 	{
 		m_snake.addSegments( );
-		m_fruit.eaten( );
+		m_fruit.deactivate( );
 	}
 }
 
@@ -25,9 +25,16 @@ void Game::update( )
 	checkCollisions( );
 }
 
+void Game::render( )
+{
+	m_snake.render( );
+	m_fruit.render( );
+}
+
 void Game::run()
 {
-	m_fruit.setPosition( Vector2( 25, 25 ) );
+	Maths::initializeRand( );
+	m_fruit.setRandomPosition();
 
 	// Game loop
 	while( m_snake.getIsAlive() == true )
@@ -35,7 +42,8 @@ void Game::run()
 		// Clear the screen
 		system( "cls" );
 
-		update( ); //TODO: seperate update and redner
+		update( );
+		render( );
 
 		Sleep( 250 );
 

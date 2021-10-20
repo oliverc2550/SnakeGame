@@ -13,10 +13,10 @@ public:
 
 	bool operator==( Vector2 vector2 );
 
-	int getX();
+	int getX() const;
 	void setX( int xValue );
 
-	int getY();
+	int getY() const;
 	void setY( int yValue );
 
 	void set( int x, int y );

@@ -17,7 +17,7 @@ SnakeSegment::~SnakeSegment( )
 
 }
 
-void SnakeSegment::moveTo( SnakeSegment previousSegment )
+void SnakeSegment::moveTo( const SnakeSegment &previousSegment )
 {
 	setPosition( previousSegment.getPosition( ) );
 }
@@ -25,4 +25,9 @@ void SnakeSegment::moveTo( SnakeSegment previousSegment )
 void SnakeSegment::update( )
 {
 	CharObject::update( );
+}
+
+void SnakeSegment::render( )
+{
+	CharObject::render( );
 }

@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CharObject.cpp" />
     <ClCompile Include="Fruit.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Helpers.cpp" />
@@ -138,7 +139,6 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="Direction.h" />
-    <ClInclude Include="RandomIntGenerator.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeSegment.h" />
     <ClInclude Include="Vector2.h" />

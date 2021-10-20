@@ -13,8 +13,9 @@ public:
 	SnakeSegment( Vector2 &position, char character );
 	~SnakeSegment( );
 
-	void moveTo( SnakeSegment previousSegment ); //TODO: reference param
+	void moveTo( const SnakeSegment& previousSegment );
 	virtual void update( ) override;
+	virtual void render( ) override;
 
 };
 

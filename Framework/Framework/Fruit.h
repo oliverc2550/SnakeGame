@@ -6,7 +6,7 @@
 class Fruit : public CharObject
 {
 private:
-	bool m_hasBeenEaten;
+	bool m_isActive;
 
 public:
 	Fruit( );
@@ -14,9 +14,11 @@ public:
 	~Fruit( );
 
 	//TODO: rename and rework functions
-	void eaten( );
-	void respawn( );
+	void deactivate( );
+	void reactivate( );
+	void setRandomPosition( );
 	virtual void update( ) override;
+	virtual void render( ) override;
 
 };
 

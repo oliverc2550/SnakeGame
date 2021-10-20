@@ -22,28 +22,28 @@ Snake::~Snake()
 
 void Snake::checkInput()
 {
-	if ( GetAsyncKeyState( 0x41 ) & 1 )
+	if ( Keyboard::checkButton( 'a' ) )
 	{
 		if( m_inputDirection != Direction::Right )
 		{
 			m_inputDirection = Direction::Left;
 		}
 	}
-	if ( GetAsyncKeyState( 0x44 ) & 1 )
+	if ( Keyboard::checkButton( 'd' ) )
 	{
 		if( m_inputDirection != Direction::Left )
 		{
 			m_inputDirection = Direction::Right;
 		}
 	}
-	if ( GetAsyncKeyState( 0x57 ) & 1 )
+	if ( Keyboard::checkButton( 'w' ) )
 	{
 		if( m_inputDirection != Direction::Down )
 		{
 			m_inputDirection = Direction::Up;
 		}
 	}
-	if ( GetAsyncKeyState( 0x53 ) & 1 )
+	if ( Keyboard::checkButton( 's' ) )
 	{
 		if( m_inputDirection != Direction::Up )
 		{
@@ -98,6 +98,11 @@ void Snake::update()
 	drawSegments( );
 }
 
+void Snake::render( )
+{
+	drawSegments( );
+}
+
 void Snake::addSegments( )
 {
 	Vector2 endPosition = m_segments[ m_length - 1 ].getPosition( );
@@ -120,16 +125,16 @@ void Snake::drawSegments( )
 {
 	for( int i = 0; i < m_length; i++)
 	{
-		m_segments[ i ].draw( );
+		m_segments[ i ].render( );
 	}
 }
 
-Vector2 Snake::getHeadPosition( )
+Vector2 Snake::getHeadPosition( ) const
 {
 	return m_segments[ 0 ].getPosition();
 }
 
-bool Snake::getIsAlive()
+bool Snake::getIsAlive() const
 {
 	return m_isAlive;
 }

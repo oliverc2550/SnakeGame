@@ -16,6 +16,7 @@ public:
 	Game();
 	void checkCollisions( );
 	void update( );
+	void render( );
 	void run( );
 };
 
