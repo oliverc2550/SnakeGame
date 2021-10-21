@@ -1,8 +1,8 @@
 #include "SnakeSegment.h"
 
-SnakeSegment::SnakeSegment( )
+SnakeSegment::SnakeSegment()
 {
-	m_position = Vector2( );
+	m_position = Vector2();
 	m_characterToRender = 'S';
 }
 
@@ -12,22 +12,22 @@ SnakeSegment::SnakeSegment( Vector2 &position, char character )
 	m_characterToRender = character;
 }
 
-SnakeSegment::~SnakeSegment( )
+SnakeSegment::~SnakeSegment()
 {
 
 }
 
 void SnakeSegment::moveTo( const SnakeSegment &previousSegment )
 {
-	setPosition( previousSegment.getPosition( ) );
+	setPosition( previousSegment.getPosition() );
 }
 
-void SnakeSegment::update( )
+void SnakeSegment::update()
 {
-	CharObject::update( );
+	CharObject::update();
 }
 
-void SnakeSegment::render( )
+void SnakeSegment::render()
 {
-	CharObject::render( );
+	CharObject::render();
 }

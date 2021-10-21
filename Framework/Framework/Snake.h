@@ -1,6 +1,21 @@
 #ifndef SNAKE_H
 #define SNAKE_H
-
+//-----------------------------------------------
+// Class	: Snake
+// Purpose	: To manage a Snake Object
+// Usage	:	Snake snake;
+//				snake.checkInput();
+// 				snake.move();
+// 				snake.update();
+// 				snake.render();
+// 				snake.addSegments();
+// 				snake.detectSegments();
+// 				snake.drawSegments();
+// 				snake.getHeadPosition() const;
+// 				snake.getIsAlive() const;
+// 				snake.setIsAlive();
+// See also	: SnakeSegment
+//-----------------------------------------------
 #include "Direction.h"
 #include "SnakeSegment.h"
 
@@ -22,12 +37,12 @@ public:
 	void checkInput();
 	void move( Direction m_inputDirection );
 	void update();
-	void render( );
-	void addSegments( );
-	void detectSegments( );
-	void drawSegments( );
+	void render();
+	void addSegments();
+	void detectSegments();
+	void drawSegments();
 
-	Vector2 getHeadPosition( ) const;
+	Vector2 getHeadPosition() const;
 
 	bool getIsAlive() const;
 	void setIsAlive();

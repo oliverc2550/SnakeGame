@@ -1,17 +1,17 @@
 #include "CharObject.h"
 
 //Virtual
-void CharObject::update( )
+void CharObject::update()
 { 
-	GameObject::update( ); 
+	GameObject::update(); 
 }
 
-void CharObject::render( )
+void CharObject::render()
 {
-	draw( );
+	draw();
 }
 
-void CharObject::draw( ) 
+void CharObject::draw() 
 { 
 	Rendering::drawChar( m_characterToRender, m_position ); 
 }

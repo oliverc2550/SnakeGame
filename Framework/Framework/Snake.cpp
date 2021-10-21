@@ -6,7 +6,7 @@
 Snake::Snake()
 {
 	m_isAlive = true;
-	m_segments[ 0 ] = SnakeSegment( ); //TODO: remove
+	m_segments[ 0 ] = SnakeSegment(); //TODO: remove
 }
 
 Snake::Snake( int xPos, int yPos )
@@ -54,8 +54,8 @@ void Snake::checkInput()
 
 void Snake::move( Direction m_inputDirection )
 {
-	int xPos = m_segments[ 0 ].getPosition( ).getX( );
-	int yPos = m_segments[ 0 ].getPosition( ).getY();
+	int xPos = m_segments[ 0 ].getPosition().getX();
+	int yPos = m_segments[ 0 ].getPosition().getY();
 
 	switch (m_inputDirection)
 	{
@@ -92,44 +92,44 @@ void Snake::move( Direction m_inputDirection )
 
 void Snake::update()
 {
-	checkInput( );
+	checkInput();
 	move( m_inputDirection );
-	detectSegments( );
-	drawSegments( );
+	detectSegments();
+	drawSegments();
 }
 
-void Snake::render( )
+void Snake::render()
 {
-	drawSegments( );
+	drawSegments();
 }
 
-void Snake::addSegments( )
+void Snake::addSegments()
 {
-	Vector2 endPosition = m_segments[ m_length - 1 ].getPosition( );
+	Vector2 endPosition = m_segments[ m_length - 1 ].getPosition();
 	m_segments[ m_length ] = SnakeSegment( endPosition, m_segmentChar );
 	m_length++;
 }
 
-void Snake::detectSegments( )
+void Snake::detectSegments()
 {
 	for( int i = 1; i < m_length - 1; i++ )
 	{
-		if ( m_segments[ 0 ].getPosition( ) == m_segments[ i ].getPosition( ) )
+		if ( m_segments[ 0 ].getPosition() == m_segments[ i ].getPosition() )
 		{
 			m_isAlive = false;
 		}
 	}
 }
 
-void Snake::drawSegments( )
+void Snake::drawSegments()
 {
 	for( int i = 0; i < m_length; i++)
 	{
-		m_segments[ i ].render( );
+		m_segments[ i ].render();
 	}
 }
 
-Vector2 Snake::getHeadPosition( ) const
+Vector2 Snake::getHeadPosition() const
 {
 	return m_segments[ 0 ].getPosition();
 }

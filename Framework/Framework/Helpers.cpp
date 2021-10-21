@@ -4,6 +4,7 @@
 #include <Windows.h>
 
 #include "Helpers.h"
+#include "Vector2.h"
 
 namespace Keyboard
 {
@@ -17,14 +18,14 @@ namespace Keyboard
 
 namespace Maths
 {
-	void initializeRand( ) 
+	void initializeRand() 
 	{ 
 		srand( time( NULL ) );
 	}
 
 	int getRandomInt( int maxValue ) 
 	{ 
-		return rand( ) % maxValue + 1; 
+		return rand() % maxValue + 1; 
 	}
 }
 
@@ -40,7 +41,7 @@ namespace Rendering
 		SetConsoleCursorPosition( hStdout, position );
 	}
 
-	void drawChar( char c, Vector2 position )
+	void drawChar( char c, Vector2& position )
 	{
 		int x = position.getX();
 		int y = position.getY();

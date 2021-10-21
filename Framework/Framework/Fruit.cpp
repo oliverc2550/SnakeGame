@@ -1,8 +1,8 @@
 #include "Fruit.h"
 
-Fruit::Fruit( )
+Fruit::Fruit()
 {
-	m_position = Vector2( );
+	m_position = Vector2();
 	m_characterToRender = 'f';
 	m_isActive = false;
 }
@@ -14,36 +14,36 @@ Fruit::Fruit( Vector2 &position, char character, bool isActive )
 	m_isActive = isActive;
 }
 
-Fruit::~Fruit( )
+Fruit::~Fruit()
 {
 
 }
 
-void Fruit::deactivate( )
+void Fruit::deactivate()
 {
 	m_isActive = true;
 }
 
-void Fruit::reactivate( )
+void Fruit::reactivate()
 {
-	if (m_isActive == true)
+	if( m_isActive == true )
 	{
-		setRandomPosition( );
+		setRandomPosition();
 		m_isActive = false;
 	}
 }
 
-void Fruit::setRandomPosition( )
+void Fruit::setRandomPosition()
 {
 	m_position = Vector2( Maths::getRandomInt( 30 ), Maths::getRandomInt( 30 ) ); //TODO: Remove magic numbers Settings.H for const numbers
 }
 
-void Fruit::update( )
+void Fruit::update()
 {
-	reactivate( );
+	reactivate();
 }
 
-void Fruit::render( )
+void Fruit::render()
 {
-	CharObject::render( );
+	CharObject::render();
 }

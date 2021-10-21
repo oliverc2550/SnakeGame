@@ -9,31 +9,31 @@ Game::Game()
 {
 }
 
-void Game::checkCollisions( )
+void Game::checkCollisions()
 {
 	if (m_snake.getHeadPosition() == m_fruit.getPosition())
 	{
-		m_snake.addSegments( );
-		m_fruit.deactivate( );
+		m_snake.addSegments();
+		m_fruit.deactivate();
 	}
 }
 
-void Game::update( )
+void Game::update()
 {
-	m_snake.update( );
-	m_fruit.update( );
-	checkCollisions( );
+	m_snake.update();
+	m_fruit.update();
+	checkCollisions();
 }
 
-void Game::render( )
+void Game::render()
 {
-	m_snake.render( );
-	m_fruit.render( );
+	m_snake.render();
+	m_fruit.render();
 }
 
 void Game::run()
 {
-	Maths::initializeRand( );
+	Maths::initializeRand();
 	m_fruit.setRandomPosition();
 
 	// Game loop
@@ -42,8 +42,8 @@ void Game::run()
 		// Clear the screen
 		system( "cls" );
 
-		update( );
-		render( );
+		update();
+		render();
 
 		Sleep( 250 );
 

@@ -14,7 +14,7 @@ Vector2::Vector2( int x, int y )
 
 bool Vector2::operator==( Vector2 vector2 ) //TODO: Reference param
 {
-	return ( m_x == vector2.getX( ) && m_y == vector2.getY( ) );
+	return ( m_x == vector2.getX() && m_y == vector2.getY() );
 }
 
 int Vector2::getX() const
