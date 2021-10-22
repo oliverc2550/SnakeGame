@@ -18,6 +18,7 @@ namespace Rendering
 {
 	//void gotoXY( int x, int y );
 	void drawChar( char c, Vector2& position );
+	void eraseChar( Vector2& position );
 }
 
 

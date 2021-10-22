@@ -3,6 +3,7 @@
 
 #include "Game.h"
 #include "Helpers.h"
+#include "Timer.h"
 #include "Vector2.h"
 
 Game::Game() 
@@ -18,10 +19,10 @@ void Game::checkCollisions()
 	}
 }
 
-void Game::update()
+void Game::update(float deltaTime)
 {
-	m_snake.update();
-	m_fruit.update();
+	m_snake.update( deltaTime );
+	m_fruit.update( deltaTime );
 	checkCollisions();
 }
 
@@ -31,22 +32,29 @@ void Game::render()
 	m_fruit.render();
 }
 
+void Game::unrender()
+{
+	m_snake.unrender();
+	m_fruit.unrender();
+}
+
 void Game::run()
 {
+	Timer timer;
 	Maths::initializeRand();
 	m_fruit.setRandomPosition();
 
 	// Game loop
 	while( m_snake.getIsAlive() == true )
 	{
-		// Clear the screen
-		system( "cls" );
+		float deltaTime = timer.getElapsedSeconds();
+		timer.start();
 
-		update();
+		unrender();
+		update(deltaTime);
 		render();
 
-		Sleep( 250 );
-
+		//Sleep( 250 );
 	}
 	system( "cls" );
 	std::cout << "snek ded";

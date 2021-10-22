@@ -20,7 +20,7 @@ public:
 	Vector2 getPosition() const { return m_position; };
 	void setPosition( Vector2 position ) { m_position = position; };
 
-	virtual void update() {};
+	virtual void update( float deltaTime ) {};
 };
 
 

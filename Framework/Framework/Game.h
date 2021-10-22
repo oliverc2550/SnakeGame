@@ -24,8 +24,9 @@ public:
 	// Constructor
 	Game();
 	void checkCollisions();
-	void update();
+	void update( float deltaTime );
 	void render();
+	void unrender();
 	void run();
 };
 

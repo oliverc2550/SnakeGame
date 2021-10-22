@@ -22,12 +22,17 @@ void SnakeSegment::moveTo( const SnakeSegment &previousSegment )
 	setPosition( previousSegment.getPosition() );
 }
 
-void SnakeSegment::update()
+void SnakeSegment::update( float deltaTime )
 {
-	CharObject::update();
+	CharObject::update( deltaTime );
 }
 
 void SnakeSegment::render()
 {
 	CharObject::render();
+}
+
+void SnakeSegment::unrender()
+{
+	CharObject::unrender();
 }

@@ -32,8 +32,9 @@ public:
 	void deactivate();
 	void reactivate();
 	void setRandomPosition();
-	virtual void update() override;
+	virtual void update( float deltaTime ) override;
 	virtual void render() override;
+	virtual void unrender() override;
 
 };
 

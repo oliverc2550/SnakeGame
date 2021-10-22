@@ -33,19 +33,23 @@ namespace Rendering
 {
 	// Some messy Win32 stuff is nicely only in this file, so hidden from the rest of the code
 
-	void gotoXY( int x, int y )
+	void gotoXY( Vector2& vector )
 	{
 		HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
-		COORD position = { (SHORT)x, (SHORT)y };
+		COORD position = { (SHORT)vector.getX(), (SHORT)vector.getY() };
 
 		SetConsoleCursorPosition( hStdout, position );
 	}
 
 	void drawChar( char c, Vector2& position )
 	{
-		int x = position.getX();
-		int y = position.getY();
-		gotoXY( x, y );
+		gotoXY( position );
 		std::cout << c;
+	}
+
+	void eraseChar( Vector2& position )
+	{
+		gotoXY( position );
+		std::cout << ' ';
 	}
 }
