@@ -25,7 +25,6 @@ private:
 	bool m_isAlive;
 	char m_segmentChar = 'S';
 	int m_length = 1;
-	int m_moveSpeed = 1;
 	Direction m_inputDirection;
 	//TODO: create snake head and snake tail tail has multiple snake segments
 	SnakeSegment m_segments[ 100 ]; //TODO: Remove magic number
@@ -36,8 +35,8 @@ public:
 	~Snake();
 
 	void checkInput();
-	void move( Direction m_inputDirection, float deltaTime );
-	void update( float deltaTime );
+	void move( Direction m_inputDirection );
+	void update();
 	void render();
 	void unrender();
 	void addSegments();

@@ -52,7 +52,7 @@ void Snake::checkInput()
 	}
 }
 
-void Snake::move( Direction m_inputDirection, float deltaTime )
+void Snake::move( Direction m_inputDirection )
 {
 	int xPos = m_segments[ 0 ].getPosition().getX();
 	int yPos = m_segments[ 0 ].getPosition().getY();
@@ -61,25 +61,25 @@ void Snake::move( Direction m_inputDirection, float deltaTime )
 	{
 		case Direction::Right:
 			{
-				xPos += ( m_moveSpeed * deltaTime ) + 0.5f;
+				xPos++;
 			}
 			break;
 
 		case Direction::Left: 
 			{
-				xPos-= ( m_moveSpeed * deltaTime ) + 0.5f;
+				xPos--;
 			}
 			break;
 
 		case Direction::Up:
 			{
-				yPos-= ( m_moveSpeed * deltaTime ) + 0.5f;
+				yPos--;
 			}
 			break;
 
 		case Direction::Down:
 			{
-				yPos+= ( m_moveSpeed * deltaTime ) + 0.5f;
+				yPos++;
 			}
 			break;
 	}
@@ -90,10 +90,10 @@ void Snake::move( Direction m_inputDirection, float deltaTime )
 	m_segments[ 0 ].setPosition( Vector2( xPos, yPos ) );
 }
 
-void Snake::update( float deltaTime)
+void Snake::update()
 {
 	checkInput();
-	move( m_inputDirection, deltaTime );
+	move( m_inputDirection );
 	detectSegments();
 	drawSegments();
 }

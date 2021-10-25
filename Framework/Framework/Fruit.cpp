@@ -38,9 +38,9 @@ void Fruit::setRandomPosition()
 	m_position = Vector2( Maths::getRandomInt( 30 ), Maths::getRandomInt( 30 ) ); //TODO: Remove magic numbers Settings.H for const numbers
 }
 
-void Fruit::update( float deltaTime )
+void Fruit::update()
 {
-	CharObject::update( deltaTime );
+	CharObject::update();
 	reactivate();
 }
 

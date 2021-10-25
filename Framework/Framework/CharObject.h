@@ -26,7 +26,7 @@ public:
 	char getCharacter() const { return m_characterToRender; };
 	void setCharacter( char character ) { m_characterToRender = character; };
 
-	virtual void update( float deltaTime ) override;
+	virtual void update() override;
 	virtual void render();
 	virtual void unrender();
 	void draw();

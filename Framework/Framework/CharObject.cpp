@@ -1,9 +1,9 @@
 #include "CharObject.h"
 
 //Virtual
-void CharObject::update( float deltaTime )
+void CharObject::update()
 { 
-	GameObject::update( deltaTime ); 
+	GameObject::update(); 
 }
 
 void CharObject::render()

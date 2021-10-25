@@ -25,14 +25,14 @@ private:
 
 public:
 	Fruit();
-	Fruit( Vector2& position, char character, bool hasBeenEaten );
+	Fruit( Vector2& position, char character, bool isActive );
 	~Fruit();
 
 	//TODO: rename and rework functions
 	void deactivate();
 	void reactivate();
 	void setRandomPosition();
-	virtual void update( float deltaTime ) override;
+	virtual void update() override;
 	virtual void render() override;
 	virtual void unrender() override;
 

@@ -28,7 +28,7 @@ public:
 	~SnakeSegment();
 
 	void moveTo( const SnakeSegment& previousSegment );
-	virtual void update( float deltaTime ) override;
+	virtual void update() override;
 	virtual void render() override;
 	virtual void unrender() override;
 

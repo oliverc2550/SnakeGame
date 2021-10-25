@@ -22,9 +22,9 @@ void SnakeSegment::moveTo( const SnakeSegment &previousSegment )
 	setPosition( previousSegment.getPosition() );
 }
 
-void SnakeSegment::update( float deltaTime )
+void SnakeSegment::update()
 {
-	CharObject::update( deltaTime );
+	CharObject::update();
 }
 
 void SnakeSegment::render()
