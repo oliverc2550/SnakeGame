@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <iostream>
+#include <string>
 #include <time.h>
 #include <Windows.h>
 
@@ -45,6 +46,18 @@ namespace Rendering
 	{
 		gotoXY( position );
 		std::cout << c;
+	}
+
+	void drawString( std::string string, Vector2& position )
+	{
+		gotoXY( position );
+		std::cout << string;
+	}
+
+	void drawScore( std::string string, int scoreValue, Vector2& position )
+	{
+		gotoXY( position );
+		std::cout << string << scoreValue;
 	}
 
 	void eraseChar( Vector2& position )

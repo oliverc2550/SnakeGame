@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "Fruit.h"
+#include "ScoreManager.h"
 #include "Snake.h"
 //-----------------------------------------------
 // Class	: Game
@@ -19,6 +20,7 @@ private:
 	// Variables
 	Snake m_snake;
 	Fruit m_fruit;
+	ScoreManager m_scoreManager;
 
 public:
 	// Constructor

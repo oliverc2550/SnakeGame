@@ -6,14 +6,14 @@
 Snake::Snake()
 {
 	m_isAlive = true;
-	m_segments[ 0 ] = SnakeSegment(); //TODO: remove
 }
 
 Snake::Snake( int xPos, int yPos )
 {
 	m_isAlive = true;
 	Vector2 startingPosition = Vector2( xPos, yPos );
-	m_segments[ 0 ] = SnakeSegment( startingPosition, m_segmentChar ); //TODO: use set position and set char instead of overloaded constructer
+	m_segments[ 0 ].setCharacter( m_segmentChar );
+	m_segments[ 0 ].setPosition( startingPosition );
 }
 
 Snake::~Snake()

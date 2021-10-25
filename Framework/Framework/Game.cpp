@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <windows.h>
 
 #include "Game.h"
@@ -7,6 +8,9 @@
 
 Game::Game() 
 {
+	system( "MODE 130, 54 " );
+	LPCSTR consoleName = TEXT( "Snake" ); //TODO: Look up
+	SetConsoleTitle( consoleName );
 }
 
 void Game::checkCollisions()
@@ -15,6 +19,8 @@ void Game::checkCollisions()
 	{
 		m_snake.addSegments();
 		m_fruit.deactivate();
+		m_scoreManager.increaseLengthCounter();
+		m_scoreManager.increaseScore();
 	}
 }
 
@@ -23,18 +29,21 @@ void Game::update()
 	m_snake.update();
 	m_fruit.update();
 	checkCollisions();
+	m_scoreManager.update();
 }
 
 void Game::render()
 {
 	m_snake.render();
 	m_fruit.render();
+	m_scoreManager.render();
 }
 
 void Game::unrender()
 {
 	m_snake.unrender();
 	m_fruit.unrender();
+	m_scoreManager.unrender();
 }
 
 void Game::run()
