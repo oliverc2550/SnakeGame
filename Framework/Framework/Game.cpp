@@ -22,6 +22,10 @@ void Game::checkCollisions()
 		m_scoreManager.increaseLengthCounter();
 		m_scoreManager.increaseScore();
 	}
+	if ( m_wallManager.checkWallCollisions( m_snake.getHeadPosition() ) == true )
+	{
+		m_snake.setIsAlive( false );
+	}
 }
 
 void Game::update()
@@ -49,6 +53,7 @@ void Game::unrender()
 void Game::run()
 {
 	Maths::initializeRand();
+	m_wallManager.render();
 	m_fruit.setRandomPosition();
 
 	// Game loop

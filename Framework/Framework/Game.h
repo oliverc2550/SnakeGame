@@ -4,6 +4,7 @@
 #include "Fruit.h"
 #include "ScoreManager.h"
 #include "Snake.h"
+#include "WallManager.h"
 //-----------------------------------------------
 // Class	: Game
 // Purpose	: To manage Snake Game
@@ -21,6 +22,7 @@ private:
 	Snake m_snake;
 	Fruit m_fruit;
 	ScoreManager m_scoreManager;
+	WallManager m_wallManager;
 
 public:
 	// Constructor

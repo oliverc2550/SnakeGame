@@ -47,7 +47,7 @@ public:
 	Vector2 getHeadPosition() const;
 
 	bool getIsAlive() const;
-	void setIsAlive();
+	void setIsAlive( bool isAlive );
 };
 
 #endif // !SNAKE_H

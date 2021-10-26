@@ -1,11 +1,14 @@
 #include <iostream>
 #include <Windows.h>
 
+#include "Settings.h"
 #include "Snake.h"
 
 Snake::Snake()
 {
 	m_isAlive = true;
+	Vector2 startingPosition = Vector2( kSnakeDefaultPosition, kSnakeDefaultPosition );
+	m_segments[ 0 ].setPosition( startingPosition );
 }
 
 Snake::Snake( int xPos, int yPos )
@@ -152,6 +155,7 @@ bool Snake::getIsAlive() const
 	return m_isAlive;
 }
 
-void Snake::setIsAlive()
+void Snake::setIsAlive(bool isAlive)
 {
+	m_isAlive = isAlive;
 }

@@ -135,6 +135,7 @@
     <ClCompile Include="StringObject.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="WallManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CharObject.h" />
@@ -145,11 +146,13 @@
     <ClInclude Include="Direction.h" />
     <ClInclude Include="ScoreDisplay.h" />
     <ClInclude Include="ScoreManager.h" />
+    <ClInclude Include="Settings.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeSegment.h" />
     <ClInclude Include="StringObject.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="WallManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

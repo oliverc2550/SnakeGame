@@ -1,8 +1,9 @@
 #include "ScoreDisplay.h"
+#include "Settings.h"
 
 ScoreDisplay::ScoreDisplay()
 {
-	m_position = Vector2( 0, 31 );
+	m_position = Vector2( 0, kScoreDisplayPosition );
 	m_stringToRender = "Score: ";
 	m_scoreValue = 0;
 }

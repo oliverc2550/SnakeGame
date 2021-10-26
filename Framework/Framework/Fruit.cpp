@@ -1,4 +1,5 @@
 #include "Fruit.h"
+#include "Settings.h"
 
 Fruit::Fruit()
 {
@@ -35,7 +36,7 @@ void Fruit::reactivate()
 
 void Fruit::setRandomPosition()
 {
-	m_position = Vector2( Maths::getRandomInt( 30 ), Maths::getRandomInt( 30 ) ); //TODO: Remove magic numbers Settings.H for const numbers
+	m_position = Vector2( Maths::getRandomInt( kFruitMaxPosition ), Maths::getRandomInt( kFruitMaxPosition ) ); //TODO: Remove magic numbers Settings.H for const numbers
 }
 
 void Fruit::update()
