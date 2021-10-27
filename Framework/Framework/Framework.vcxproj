@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Brick.cpp" />
     <ClCompile Include="CharObject.cpp" />
     <ClCompile Include="ColoredObject.cpp" />
     <ClCompile Include="Fruit.cpp" />
@@ -132,7 +133,9 @@
     <ClCompile Include="ScoreDisplay.cpp" />
     <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="SnakeHead.cpp" />
     <ClCompile Include="SnakeSegment.cpp" />
+    <ClCompile Include="SnakeTail.cpp" />
     <ClCompile Include="StringObject.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Vector2.cpp" />

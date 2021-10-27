@@ -4,7 +4,7 @@
 SnakeSegment::SnakeSegment()
 {
 	m_position = Vector2();
-	m_colorValue = k_green;
+	m_colorValue = k_lightGreen;
 }
 
 SnakeSegment::SnakeSegment( Vector2 &position, int colorValue )

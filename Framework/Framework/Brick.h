@@ -21,6 +21,10 @@ class Brick : public ColoredObject
 private:
 
 public:
+	Brick();
+	Brick( Vector2 position, int colorValue );
+	~Brick();
+
 	virtual void update() override;
 	virtual void render() override;
 	virtual void unrender() override;

@@ -10,12 +10,10 @@ WallManager::~WallManager()
 }
 
 //Private Methods
-void WallManager::setWallCharAndPosition( CharObject wallToSet[], int wallArraySize, bool isWallHorizontal, int startingXpos, int startingYpos )
+void WallManager::setWallPosition( Brick wallToSet[], int wallArraySize, bool isWallHorizontal, int startingXpos, int startingYpos )
 {
 	for( int i = 0; i < wallArraySize; i++ )
 	{
-		wallToSet[ i ].setCharacter( m_kWallChar );
-
 		if( isWallHorizontal == true )
 		{
 			startingXpos = i;
@@ -29,7 +27,7 @@ void WallManager::setWallCharAndPosition( CharObject wallToSet[], int wallArrayS
 	}
 }
 
-void WallManager::drawWall( CharObject wallToDraw[], int wallArraySize )
+void WallManager::drawWall( Brick wallToDraw[], int wallArraySize )
 {
 	for( int i = 0; i < wallArraySize; i++ )
 	{
@@ -37,7 +35,7 @@ void WallManager::drawWall( CharObject wallToDraw[], int wallArraySize )
 	}
 }
 
-bool WallManager::detectWallCollision( CharObject wallToCheck[], int wallArraySize, Vector2 otherObject )
+bool WallManager::detectWallCollision( Brick wallToCheck[], int wallArraySize, Vector2 otherObject )
 {
 	for( int i = 0; i < wallArraySize; i++ )
 	{
@@ -51,10 +49,10 @@ bool WallManager::detectWallCollision( CharObject wallToCheck[], int wallArraySi
 
 void WallManager::initializeWalls()
 {
-	setWallCharAndPosition( m_wallTop, k_WallMaxHorizontalSize, true );
-	setWallCharAndPosition( m_wallBottom, k_WallMaxHorizontalSize, true, 0, k_WallMaxVerticalSize );
-	setWallCharAndPosition( m_wallLeft, k_WallMaxVerticalSize, false );
-	setWallCharAndPosition( m_wallRight, k_WallMaxVerticalSize, false, k_WallMaxHorizontalSize );
+	setWallPosition( m_wallTop, k_WallMaxHorizontalSize, true );
+	setWallPosition( m_wallBottom, k_WallMaxHorizontalSize, true, 0, k_WallMaxVerticalSize );
+	setWallPosition( m_wallLeft, k_WallMaxVerticalSize, false );
+	setWallPosition( m_wallRight, k_WallMaxVerticalSize, false, k_WallMaxHorizontalSize );
 }
 
 //Public Methods

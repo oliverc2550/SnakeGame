@@ -17,22 +17,20 @@
 // See also	: SnakeSegment
 //-----------------------------------------------
 #include "Direction.h"
-#include "Settings.h"
-#include "SnakeSegment.h"
+#include "SnakeHead.h"
+#include "SnakeTail.h"
 
 class Snake
 {
 private:
 	bool m_isAlive;
-	char m_segmentChar = 'S';
-	int m_length = 0;
 	Direction m_inputDirection;
-	SnakeSegment m_head;
-	SnakeSegment m_tail[ k_SnakeTailMaxLength ];
+	SnakeHead m_head;
+	SnakeTail m_tail;
 
 public:
 	Snake();
-	Snake( int xPos, int yPos );
+	Snake( Vector2 startingPosition );
 	~Snake();
 
 	void checkInput();
@@ -41,9 +39,6 @@ public:
 	void render();
 	void unrender();
 	void addSegments();
-	void detectSegments();
-	void drawTail();
-	void eraseTail();
 
 	Vector2 getHeadPosition() const;
 

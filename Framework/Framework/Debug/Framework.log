@@ -1,2 +1,7 @@
 ﻿  Game.cpp
+  Main.cpp
+  Snake.cpp
+  SnakeSegment.cpp
+  SnakeTail.cpp
+  Generating Code...
   Framework.vcxproj -> C:\Users\olive\Documents\GitHub\SnakeGame\Framework\Debug\Framework.exe

@@ -16,23 +16,20 @@
 // 				snake.setIsAlive();
 // See also	: SnakeSegment
 //-----------------------------------------------
-#include "CharObject.h"
+#include "Brick.h"
 #include "Settings.h"
 
 class WallManager
 {
 private:
-	const char m_kWallChar = '#';
-	//TODO: create wall element class
-	CharObject m_wallTop[ k_WallMaxHorizontalSize ];
-	CharObject m_wallBottom[ k_WallMaxHorizontalSize ];
-	CharObject m_wallLeft[ k_WallMaxVerticalSize ];
-	CharObject m_wallRight[ k_WallMaxVerticalSize ];
-	//Vector2 m_wallColliders[ kWallCollidersSize ];
+	Brick m_wallTop[ k_WallMaxHorizontalSize ];
+	Brick m_wallBottom[ k_WallMaxHorizontalSize ];
+	Brick m_wallLeft[ k_WallMaxVerticalSize ];
+	Brick m_wallRight[ k_WallMaxVerticalSize ];
 
-	void setWallCharAndPosition( CharObject wallToSet[], int wallArraySize, bool isWallHorizontal, int startingXpos = 0, int startingYpos = 0 );
-	void drawWall( CharObject wallToDraw[], int wallArraySize );
-	bool detectWallCollision( CharObject wallToCheck[], int wallArraySize, Vector2 otherObject );
+	void setWallPosition( Brick wallToSet[], int wallArraySize, bool isWallHorizontal, int startingXpos = 0, int startingYpos = 0 );
+	void drawWall( Brick wallToDraw[], int wallArraySize );
+	bool detectWallCollision( Brick wallToCheck[], int wallArraySize, Vector2 otherObject );
 	void initializeWalls();
 
 public:

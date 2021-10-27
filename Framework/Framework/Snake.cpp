@@ -1,4 +1,3 @@
-#include <iostream>
 #include <Windows.h>
 
 #include "Settings.h"
@@ -7,15 +6,15 @@
 Snake::Snake()
 {
 	m_isAlive = true;
+	m_inputDirection = Direction::Null;
 	Vector2 startingPosition = Vector2( k_SnakeDefaultXPosition, k_SnakeDefaultYPosition );
 	m_head.setPosition( startingPosition );
 }
 
-Snake::Snake( int xPos, int yPos )
+Snake::Snake( Vector2 startingPosition )
 {
 	m_isAlive = true;
-	Vector2 startingPosition = Vector2( xPos, yPos );
-	//m_head.setCharacter( m_segmentChar );
+	m_inputDirection = Direction::Null;
 	m_head.setPosition( startingPosition );
 }
 
@@ -60,7 +59,7 @@ void Snake::move( Direction m_inputDirection )
 	int xPos = m_head.getPosition().getX();
 	int yPos = m_head.getPosition().getY();
 
-	switch (m_inputDirection)
+	switch ( m_inputDirection )
 	{
 		case Direction::Right:
 			{
@@ -86,11 +85,7 @@ void Snake::move( Direction m_inputDirection )
 			}
 			break;
 	}
-	for (int i = m_length; i > 0; i--)
-	{
-		m_tail[ i ].moveTo( m_tail[ i - 1 ] );
-	}
-	m_tail[ 0 ].moveTo( m_head );
+	m_tail.move( m_head );
 	m_head.setPosition( Vector2( xPos, yPos ) );
 }
 
@@ -98,53 +93,24 @@ void Snake::update()
 {
 	checkInput();
 	move( m_inputDirection );
-	detectSegments();
+	m_isAlive = m_tail.detectSegments( m_head );
 }
 
 void Snake::render()
 {
-	drawTail();
+	m_tail.render();
 	m_head.render();
 }
 
 void Snake::unrender()
 {
-	eraseTail();
+	m_tail.unrender();
 	m_head.unrender();
 }
 
 void Snake::addSegments()
 {
-	Vector2 endPosition = m_tail[ m_length ].getPosition();
-	m_tail[ m_length ].setPosition( endPosition );
-	m_length++;
-}
-
-void Snake::detectSegments()
-{
-	for( int i = 0; i < m_length - 1; i++ )
-	{
-		if ( m_head.getPosition() == m_tail[ i ].getPosition() )
-		{
-			m_isAlive = false;
-		}
-	}
-}
-
-void Snake::drawTail()
-{
-	for( int i = 0; i < m_length; i++)
-	{
-		m_tail[ i ].render();
-	}
-}
-
-void Snake::eraseTail()
-{
-	for( int i = 0; i < m_length; i++ )
-	{
-		m_tail[ i ].unrender();
-	}
+	m_tail.addSegments();
 }
 
 Vector2 Snake::getHeadPosition() const
