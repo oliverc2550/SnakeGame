@@ -1,7 +1,7 @@
 #ifndef FRUIT_H
 #define FRUIT_H
 
-#include "CharObject.h"
+#include "ColoredObject.h"
 //-----------------------------------------------
 // Class	: Fruit
 // Purpose	: To manage a Fruit object
@@ -18,14 +18,14 @@
 //				fruit.setRandomPosition();			
 // See also	: GameObject, CharObject
 //-----------------------------------------------
-class Fruit : public CharObject
+class Fruit : public ColoredObject
 {
 private:
 	bool m_isActive;
 
 public:
 	Fruit();
-	Fruit( Vector2& position, char character, bool isActive );
+	Fruit( Vector2& position, int colorValue, bool isActive );
 	~Fruit();
 
 	//TODO: rename and rework functions

@@ -4,6 +4,7 @@
 #include <time.h>
 #include <Windows.h>
 
+#include "Colors.h"
 #include "Helpers.h"
 #include "Vector2.h"
 
@@ -48,6 +49,12 @@ namespace Rendering
 		std::cout << c;
 	}
 
+	void drawColoredCell( int colorValue, Vector2& position )
+	{
+		gotoXY( position );
+		std::cout << "\033[" + ( std::to_string( colorValue ) ) + "m" + ' ' + "\033[0m\n";
+	}
+
 	void drawString( std::string string, Vector2& position )
 	{
 		gotoXY( position );
@@ -64,5 +71,11 @@ namespace Rendering
 	{
 		gotoXY( position );
 		std::cout << ' ';
+	}
+
+	void eraseColoredCell( Vector2& position )
+	{
+		gotoXY( position );
+		std::cout << "\033[" + ( std::to_string( k_black ) ) + "m" + ' ' + "\033[0m\n";
 	}
 }

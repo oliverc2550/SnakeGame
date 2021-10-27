@@ -1,7 +1,7 @@
 #ifndef SNAKESEGMENT_H
 #define SNAKESEGMENT_H
 
-#include "CharObject.h"
+#include "ColoredObject.h"
 //-----------------------------------------------
 // Class	: SnakeSegment
 // Purpose	: To manage a Snake Segment object
@@ -15,16 +15,16 @@
 //				snakeSegment.draw();
 //				snakeSegment.moveTo();
 //				
-// See also	: GameObject, CharObject
+// See also	: GameObject, ColoredObject
 //-----------------------------------------------
-class SnakeSegment : public CharObject
+class SnakeSegment : public ColoredObject
 {
 private:
 
 
 public:
 	SnakeSegment();
-	SnakeSegment( Vector2& position, char character );
+	SnakeSegment( Vector2& position, int colorValue );
 	~SnakeSegment();
 
 	void moveTo( const SnakeSegment& previousSegment );

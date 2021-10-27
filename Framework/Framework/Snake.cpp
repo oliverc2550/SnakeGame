@@ -7,16 +7,16 @@
 Snake::Snake()
 {
 	m_isAlive = true;
-	Vector2 startingPosition = Vector2( kSnakeDefaultPosition, kSnakeDefaultPosition );
-	m_segments[ 0 ].setPosition( startingPosition );
+	Vector2 startingPosition = Vector2( k_SnakeDefaultXPosition, k_SnakeDefaultYPosition );
+	m_head.setPosition( startingPosition );
 }
 
 Snake::Snake( int xPos, int yPos )
 {
 	m_isAlive = true;
 	Vector2 startingPosition = Vector2( xPos, yPos );
-	m_segments[ 0 ].setCharacter( m_segmentChar );
-	m_segments[ 0 ].setPosition( startingPosition );
+	//m_head.setCharacter( m_segmentChar );
+	m_head.setPosition( startingPosition );
 }
 
 Snake::~Snake()
@@ -57,8 +57,8 @@ void Snake::checkInput()
 
 void Snake::move( Direction m_inputDirection )
 {
-	int xPos = m_segments[ 0 ].getPosition().getX();
-	int yPos = m_segments[ 0 ].getPosition().getY();
+	int xPos = m_head.getPosition().getX();
+	int yPos = m_head.getPosition().getY();
 
 	switch (m_inputDirection)
 	{
@@ -86,11 +86,12 @@ void Snake::move( Direction m_inputDirection )
 			}
 			break;
 	}
-	for (int i = m_length - 1; i > 0; i--)
+	for (int i = m_length; i > 0; i--)
 	{
-		m_segments[ i ].moveTo( m_segments[ i - 1 ] );
+		m_tail[ i ].moveTo( m_tail[ i - 1 ] );
 	}
-	m_segments[ 0 ].setPosition( Vector2( xPos, yPos ) );
+	m_tail[ 0 ].moveTo( m_head );
+	m_head.setPosition( Vector2( xPos, yPos ) );
 }
 
 void Snake::update()
@@ -98,56 +99,57 @@ void Snake::update()
 	checkInput();
 	move( m_inputDirection );
 	detectSegments();
-	drawSegments();
 }
 
 void Snake::render()
 {
-	drawSegments();
+	drawTail();
+	m_head.render();
 }
 
 void Snake::unrender()
 {
-	eraseSegments();
+	eraseTail();
+	m_head.unrender();
 }
 
 void Snake::addSegments()
 {
-	Vector2 endPosition = m_segments[ m_length - 1 ].getPosition();
-	m_segments[ m_length ] = SnakeSegment( endPosition, m_segmentChar );
+	Vector2 endPosition = m_tail[ m_length ].getPosition();
+	m_tail[ m_length ].setPosition( endPosition );
 	m_length++;
 }
 
 void Snake::detectSegments()
 {
-	for( int i = 1; i < m_length - 1; i++ )
+	for( int i = 0; i < m_length - 1; i++ )
 	{
-		if ( m_segments[ 0 ].getPosition() == m_segments[ i ].getPosition() )
+		if ( m_head.getPosition() == m_tail[ i ].getPosition() )
 		{
 			m_isAlive = false;
 		}
 	}
 }
 
-void Snake::drawSegments()
+void Snake::drawTail()
 {
 	for( int i = 0; i < m_length; i++)
 	{
-		m_segments[ i ].render();
+		m_tail[ i ].render();
 	}
 }
 
-void Snake::eraseSegments()
+void Snake::eraseTail()
 {
 	for( int i = 0; i < m_length; i++ )
 	{
-		m_segments[ i ].unrender();
+		m_tail[ i ].unrender();
 	}
 }
 
 Vector2 Snake::getHeadPosition() const
 {
-	return m_segments[ 0 ].getPosition();
+	return m_head.getPosition();
 }
 
 bool Snake::getIsAlive() const

@@ -1,15 +1,16 @@
+#include "Colors.h"
 #include "SnakeSegment.h"
 
 SnakeSegment::SnakeSegment()
 {
 	m_position = Vector2();
-	m_characterToRender = 'S';
+	m_colorValue = k_green;
 }
 
-SnakeSegment::SnakeSegment( Vector2 &position, char character )
+SnakeSegment::SnakeSegment( Vector2 &position, int colorValue )
 {
 	m_position = position;
-	m_characterToRender = character;
+	m_colorValue = colorValue;
 }
 
 SnakeSegment::~SnakeSegment()
@@ -24,15 +25,15 @@ void SnakeSegment::moveTo( const SnakeSegment& previousSegment )
 
 void SnakeSegment::update()
 {
-	CharObject::update();
+	ColoredObject::update();
 }
 
 void SnakeSegment::render()
 {
-	CharObject::render();
+	ColoredObject::render();
 }
 
 void SnakeSegment::unrender()
 {
-	CharObject::unrender();
+	ColoredObject::unrender();
 }

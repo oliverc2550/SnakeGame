@@ -8,8 +8,9 @@
 
 Game::Game() 
 {
-	system( "MODE 130, 54 " );
-	LPCSTR consoleName = TEXT( "Snake" ); //TODO: Look up
+	//TODO: Move to helpers
+	system( "MODE 125, 55 " );
+	LPCSTR consoleName = TEXT( "Snake" );
 	SetConsoleTitle( consoleName );
 }
 
@@ -30,9 +31,9 @@ void Game::checkCollisions()
 
 void Game::update()
 {
+	checkCollisions();
 	m_snake.update();
 	m_fruit.update();
-	checkCollisions();
 	m_scoreManager.update();
 }
 
@@ -55,15 +56,15 @@ void Game::run()
 	Maths::initializeRand();
 	m_wallManager.render();
 	m_fruit.setRandomPosition();
-
+	
 	// Game loop
 	while( m_snake.getIsAlive() == true )
 	{
 		unrender();
 		update();
 		render();
-
-		Sleep( 200 );
+	
+		Sleep( 100 );
 	}
 	system( "cls" );
 	std::cout << "snek ded";

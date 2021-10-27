@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CharObject.cpp" />
+    <ClCompile Include="ColoredObject.cpp" />
     <ClCompile Include="Fruit.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Helpers.cpp" />
@@ -138,7 +139,10 @@
     <ClCompile Include="WallManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Brick.h" />
     <ClInclude Include="CharObject.h" />
+    <ClInclude Include="ColoredObject.h" />
+    <ClInclude Include="Colors.h" />
     <ClInclude Include="Fruit.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
@@ -148,7 +152,9 @@
     <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="Snake.h" />
+    <ClInclude Include="SnakeHead.h" />
     <ClInclude Include="SnakeSegment.h" />
+    <ClInclude Include="SnakeTail.h" />
     <ClInclude Include="StringObject.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Vector2.h" />

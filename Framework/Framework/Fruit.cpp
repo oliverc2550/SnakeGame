@@ -1,17 +1,18 @@
+#include "Colors.h"
 #include "Fruit.h"
 #include "Settings.h"
 
 Fruit::Fruit()
 {
 	m_position = Vector2();
-	m_characterToRender = 'f';
+	m_colorValue = k_red;
 	m_isActive = true;
 }
 
-Fruit::Fruit( Vector2 &position, char character, bool isActive )
+Fruit::Fruit( Vector2 &position, int colorValue, bool isActive )
 {
 	m_position = position;
-	m_characterToRender = character;
+	m_colorValue = colorValue;
 	m_isActive = isActive;
 }
 
@@ -36,21 +37,21 @@ void Fruit::reactivate()
 
 void Fruit::setRandomPosition()
 {
-	m_position = Vector2( Maths::getRandomInt( kFruitMaxPosition ), Maths::getRandomInt( kFruitMaxPosition ) ); //TODO: Remove magic numbers Settings.H for const numbers
+	m_position = Vector2( Maths::getRandomInt( k_FruitMaxXPosition ), Maths::getRandomInt( k_FruitMaxYPosition ) ); //TODO: Remove magic numbers Settings.H for const numbers
 }
 
 void Fruit::update()
 {
-	CharObject::update();
+	ColoredObject::update();
 	reactivate();
 }
 
 void Fruit::render()
 {
-	CharObject::render();
+	ColoredObject::render();
 }
 
 void Fruit::unrender()
 {
-	CharObject::unrender();
+	ColoredObject::unrender();
 }

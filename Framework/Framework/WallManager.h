@@ -23,11 +23,11 @@ class WallManager
 {
 private:
 	const char m_kWallChar = '#';
-	//TODO: create snake head and snake tail tail has multiple snake segments
-	CharObject m_wallTop[ kWallMaxHorizontalSize ];
-	CharObject m_wallBottom[ kWallMaxHorizontalSize ];
-	CharObject m_wallLeft[ kWallMaxVerticalSize ];
-	CharObject m_wallRight[ kWallMaxVerticalSize ];
+	//TODO: create wall element class
+	CharObject m_wallTop[ k_WallMaxHorizontalSize ];
+	CharObject m_wallBottom[ k_WallMaxHorizontalSize ];
+	CharObject m_wallLeft[ k_WallMaxVerticalSize ];
+	CharObject m_wallRight[ k_WallMaxVerticalSize ];
 	//Vector2 m_wallColliders[ kWallCollidersSize ];
 
 	void setWallCharAndPosition( CharObject wallToSet[], int wallArraySize, bool isWallHorizontal, int startingXpos = 0, int startingYpos = 0 );

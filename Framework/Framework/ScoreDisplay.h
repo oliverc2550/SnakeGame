@@ -3,8 +3,8 @@
 
 #include "StringObject.h"
 //-----------------------------------------------
-// Class	: CharObject
-// Purpose	: To manage a Char object
+// Class	: ScoreDisplay
+// Purpose	: To manage a ScoreDisplay object
 // Usage	:	ScoreDisplay scoreDisplay
 //				scoreDisplay.getPosition() const;
 //				scoreDisplay.setPosition();

@@ -3,7 +3,7 @@
 
 ScoreDisplay::ScoreDisplay()
 {
-	m_position = Vector2( 0, kScoreDisplayPosition );
+	m_position = Vector2( 0, k_ScoreDisplayPosition );
 	m_stringToRender = "Score: ";
 	m_scoreValue = 0;
 }

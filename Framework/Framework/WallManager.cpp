@@ -51,36 +51,36 @@ bool WallManager::detectWallCollision( CharObject wallToCheck[], int wallArraySi
 
 void WallManager::initializeWalls()
 {
-	setWallCharAndPosition( m_wallTop, kWallMaxHorizontalSize, true );
-	setWallCharAndPosition( m_wallBottom, kWallMaxHorizontalSize, true, 0, kWallMaxVerticalSize );
-	setWallCharAndPosition( m_wallLeft, kWallMaxVerticalSize, false );
-	setWallCharAndPosition( m_wallRight, kWallMaxVerticalSize, false, kWallMaxHorizontalSize );
+	setWallCharAndPosition( m_wallTop, k_WallMaxHorizontalSize, true );
+	setWallCharAndPosition( m_wallBottom, k_WallMaxHorizontalSize, true, 0, k_WallMaxVerticalSize );
+	setWallCharAndPosition( m_wallLeft, k_WallMaxVerticalSize, false );
+	setWallCharAndPosition( m_wallRight, k_WallMaxVerticalSize, false, k_WallMaxHorizontalSize );
 }
 
 //Public Methods
 void WallManager::render()
 {
-	drawWall( m_wallTop, kWallMaxHorizontalSize );
-	drawWall( m_wallBottom, kWallMaxHorizontalSize );
-	drawWall( m_wallLeft, kWallMaxVerticalSize );
-	drawWall( m_wallRight, kWallMaxVerticalSize );
+	drawWall( m_wallTop, k_WallMaxHorizontalSize );
+	drawWall( m_wallBottom, k_WallMaxHorizontalSize );
+	drawWall( m_wallLeft, k_WallMaxVerticalSize );
+	drawWall( m_wallRight, k_WallMaxVerticalSize );
 }
 
 bool WallManager::checkWallCollisions( Vector2 otherObject )
 {
-	if( detectWallCollision( m_wallTop, kWallMaxHorizontalSize, otherObject ) )
+	if( detectWallCollision( m_wallTop, k_WallMaxHorizontalSize, otherObject ) )
 	{
 		return true;
 	}
-	else if( detectWallCollision( m_wallBottom, kWallMaxHorizontalSize, otherObject ) )
+	else if( detectWallCollision( m_wallBottom, k_WallMaxHorizontalSize, otherObject ) )
 	{
 		return true;
 	}
-	else if( detectWallCollision( m_wallLeft, kWallMaxVerticalSize, otherObject ) )
+	else if( detectWallCollision( m_wallLeft, k_WallMaxVerticalSize, otherObject ) )
 	{
 		return true;
 	}
-	else if( detectWallCollision( m_wallRight, kWallMaxVerticalSize, otherObject ) )
+	else if( detectWallCollision( m_wallRight, k_WallMaxVerticalSize, otherObject ) )
 	{
 		return true;
 	}

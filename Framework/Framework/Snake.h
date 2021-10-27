@@ -17,6 +17,7 @@
 // See also	: SnakeSegment
 //-----------------------------------------------
 #include "Direction.h"
+#include "Settings.h"
 #include "SnakeSegment.h"
 
 class Snake
@@ -24,10 +25,10 @@ class Snake
 private:
 	bool m_isAlive;
 	char m_segmentChar = 'S';
-	int m_length = 1;
+	int m_length = 0;
 	Direction m_inputDirection;
-	//TODO: create snake head and snake tail tail has multiple snake segments
-	SnakeSegment m_segments[ 100 ]; //TODO: Remove magic number
+	SnakeSegment m_head;
+	SnakeSegment m_tail[ k_SnakeTailMaxLength ];
 
 public:
 	Snake();
@@ -41,8 +42,8 @@ public:
 	void unrender();
 	void addSegments();
 	void detectSegments();
-	void drawSegments();
-	void eraseSegments();
+	void drawTail();
+	void eraseTail();
 
 	Vector2 getHeadPosition() const;
 
