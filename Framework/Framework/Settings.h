@@ -1,12 +1,17 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
-const int k_WallMaxVerticalSize = 51;
+
+const int k_gameOverLinesOfText = 2;
+const int k_MainMenuLinesOfText = 6;
+const int k_LineSpacing = 6;
+const int k_maxNumberOfParticles = 4;
 const int k_WallMaxHorizontalSize = 102;
-const int k_FruitMaxXPosition = 100;
-const int k_FruitMaxYPosition = 49;
+const int k_WallMaxVerticalSize = 52;
+const int k_FruitMaxXPosition = k_WallMaxHorizontalSize - 3;
+const int k_FruitMaxYPosition = k_WallMaxVerticalSize - 3;
 const int k_SnakeTailMaxLength = ( k_WallMaxVerticalSize * k_WallMaxHorizontalSize ) - 1;
-const int k_SnakeDefaultXPosition = 51;
-const int k_SnakeDefaultYPosition = 25;
-const int k_ScoreDisplayPosition = 53;
+const int k_SnakeDefaultXPosition = k_WallMaxHorizontalSize / 2;
+const int k_SnakeDefaultYPosition = k_WallMaxVerticalSize / 2;
+const int k_ScoreDisplayPosition = k_WallMaxVerticalSize + 1;
 
 #endif // ifndef SETTINGS_H

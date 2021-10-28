@@ -62,3 +62,8 @@ void SnakeTail::eraseTail()
 		m_tail[ i ].unrender();
 	}
 }
+
+void SnakeTail::resetTailLength()
+{
+	m_length = 0;
+}

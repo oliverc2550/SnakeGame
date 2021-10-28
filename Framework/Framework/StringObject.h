@@ -9,8 +9,8 @@
 // Usage	:	StringObject stringObject
 //				stringObject.getPosition() const;
 //				stringObject.setPosition();
-//				stringObject.getCharacter() const;
-//				stringObject.setCharacter();
+//				stringObject.getString() const;
+//				stringObject.setString();
 //				stringObject.update();
 //				stringObject.render();
 //				stringObject.draw();
@@ -23,8 +23,8 @@ protected:
 	std::string m_stringToRender;
 
 public:
-	std::string getCharacter() const { return m_stringToRender; };
-	void setCharacter( std::string string ) { m_stringToRender = string; };
+	std::string getString() const { return m_stringToRender; };
+	void setString( std::string string ) { m_stringToRender = string; };
 
 	virtual void update() override;
 	virtual void render();

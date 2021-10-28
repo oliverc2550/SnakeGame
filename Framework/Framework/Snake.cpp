@@ -113,6 +113,15 @@ void Snake::addSegments()
 	m_tail.addSegments();
 }
 
+void Snake::reset()
+{
+	m_isAlive = true;
+	m_inputDirection = Direction::Null;
+	Vector2 startingPosition = Vector2( k_SnakeDefaultXPosition, k_SnakeDefaultYPosition );
+	m_head.setPosition( startingPosition );
+	m_tail.resetTailLength();
+}
+
 Vector2 Snake::getHeadPosition() const
 {
 	return m_head.getPosition();

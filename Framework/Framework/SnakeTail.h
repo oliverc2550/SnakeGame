@@ -36,6 +36,7 @@ public:
 	bool detectSegments( const SnakeSegment& snakeHead );
 	void drawTail();
 	void eraseTail();
+	void resetTailLength();
 };
 
 #endif // !SNAKETAIL_H

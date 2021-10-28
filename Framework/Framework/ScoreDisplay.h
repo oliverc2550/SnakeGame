@@ -27,7 +27,7 @@ public:
 	~ScoreDisplay();
 
 	int getScoreValue() const;
-	void setScoreVale( int scoreValue );
+	void setScoreValue( int scoreValue );
 
 	virtual void update() override;
 	virtual void render() override;

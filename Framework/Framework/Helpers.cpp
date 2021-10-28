@@ -6,7 +6,18 @@
 
 #include "Colors.h"
 #include "Helpers.h"
+#include "Settings.h"
 #include "Vector2.h"
+
+namespace GameWindow
+{
+	void initializeGameWindow()
+	{
+		system( "MODE 103, 55" );
+		LPCSTR consoleName = TEXT( "Snake" );
+		SetConsoleTitle( consoleName );
+	}
+}
 
 namespace Keyboard
 {
@@ -28,6 +39,19 @@ namespace Maths
 	int getRandomInt( int maxValue ) 
 	{ 
 		return rand() % maxValue + 1; 
+	}
+}
+
+namespace TextCentering
+{
+	int horizontallyCenterText( std::string textToCenter )
+	{
+		return ( k_WallMaxHorizontalSize / 2 ) - ( textToCenter.length() / 2 );
+	}
+
+	int verticallyCenterText( int verticalOffset )
+	{
+		return ( k_WallMaxVerticalSize / 2 ) + verticalOffset;
 	}
 }
 

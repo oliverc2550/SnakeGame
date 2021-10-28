@@ -9,26 +9,27 @@ enum class Sounds
 	BackgroundMusic
 };
 
-void playSound( Sounds sound, bool isLooping )
+void playSound( Sounds sound )
 {
-	LPCSTR soundToPlay = "";
-
 	switch( sound )
 	{
 		case Sounds::Pickup:
 			{
-				soundToPlay = "";
+				PlaySound( "Pickup.wav", NULL, SND_FILENAME | SND_ASYNC );
 			}
 			break;
 
 		case Sounds::BackgroundMusic:
 			{
-				soundToPlay = "";
+				PlaySound( "BackgroundMusic.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
 			}
 			break;
 	}
+}
 
-	PlaySound( soundToPlay, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+void stopSound()
+{
+	PlaySound( NULL, NULL, SND_FILENAME | SND_ASYNC );
 }
 
 #endif // !AUDIO_H

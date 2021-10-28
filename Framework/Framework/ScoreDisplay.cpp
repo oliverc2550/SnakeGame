@@ -25,7 +25,7 @@ int ScoreDisplay::getScoreValue() const
 	return m_scoreValue;
 }
 
-void ScoreDisplay::setScoreVale( int scoreValue )
+void ScoreDisplay::setScoreValue( int scoreValue )
 {
 	m_scoreValue = scoreValue;
 }

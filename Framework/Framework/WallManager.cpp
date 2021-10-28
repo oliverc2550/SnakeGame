@@ -14,11 +14,11 @@ void WallManager::setWallPosition( Brick wallToSet[], int wallArraySize, bool is
 {
 	for( int i = 0; i < wallArraySize; i++ )
 	{
-		if( isWallHorizontal == true )
+		if( isWallHorizontal )
 		{
 			startingXpos = i;
 		}
-		else if ( isWallHorizontal == false )
+		else if ( !isWallHorizontal )
 		{
 			startingYpos = i;
 		}

@@ -39,6 +39,7 @@ public:
 	void render();
 	void unrender();
 	void addSegments();
+	void reset();
 
 	Vector2 getHeadPosition() const;
 

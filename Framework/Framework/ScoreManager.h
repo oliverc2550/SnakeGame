@@ -38,6 +38,7 @@ public:
 
 	void increaseScore();
 	void increaseLengthCounter();
+	void resetScore();
 
 };
 

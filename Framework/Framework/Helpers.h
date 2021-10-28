@@ -7,7 +7,7 @@ class Vector2;
 
 namespace GameWindow
 {
-
+	void initializeGameWindow();
 }
 
 namespace Keyboard
@@ -21,6 +21,12 @@ namespace Maths
 	int getRandomInt( int maxValue );
 }
 
+namespace TextCentering
+{
+	int horizontallyCenterText( std::string textToCenter );
+	int verticallyCenterText( int verticalOffset = 0 );
+}
+
 namespace Rendering
 {
 	//void gotoXY( int x, int y );
@@ -31,8 +37,5 @@ namespace Rendering
 	void eraseChar( Vector2& position );
 	void eraseColoredCell( Vector2& position );
 }
-
-
-
 
 #endif // ifndef HELPERS_H
