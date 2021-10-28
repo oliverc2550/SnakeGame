@@ -142,6 +142,7 @@
     <ClCompile Include="WallManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Audio.h" />
     <ClInclude Include="Brick.h" />
     <ClInclude Include="CharObject.h" />
     <ClInclude Include="ColoredObject.h" />
