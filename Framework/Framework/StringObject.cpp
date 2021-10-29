@@ -1,5 +1,13 @@
 #include "StringObject.h"
 
+StringObject::StringObject()
+{
+}
+
+StringObject::~StringObject()
+{
+}
+
 //Virtual
 void StringObject::update()
 {

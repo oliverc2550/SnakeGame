@@ -1,6 +1,8 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
+//Constant in values that correspond to a variety of different values. Declared here to prevent use of magic numbers and variable repeating
+//Declared in a separate header file for easy use across project
 const int k_gameOverLinesOfText = 2;
 const int k_MainMenuLinesOfText = 6;
 const int k_LineSpacing = 6;

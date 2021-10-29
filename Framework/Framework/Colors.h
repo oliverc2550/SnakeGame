@@ -1,5 +1,8 @@
 #ifndef COLORS_H
 #define COLORS_H
+
+//Constant in values that correspond to specific colors within ANSI color table. All values are for background colors
+//Declared in a separate header file for easy use across project
 const int k_black			= 0;
 const int k_red				= 41;
 const int k_green			= 42;

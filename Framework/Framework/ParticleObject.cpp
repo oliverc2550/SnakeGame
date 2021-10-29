@@ -1,5 +1,13 @@
 #include "ParticleObject.h"
 
+ParticleObject::ParticleObject()
+{
+}
+
+ParticleObject::~ParticleObject()
+{
+}
+
 //Virtual
 void ParticleObject::update()
 {

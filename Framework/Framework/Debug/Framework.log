@@ -1,4 +1,23 @@
-﻿  Game.cpp
+﻿  Brick.cpp
+  CharObject.cpp
+  ColoredObject.cpp
+  Fruit.cpp
+  Game.cpp
+  GameOverScreen.cpp
+  Helpers.cpp
+C:\Users\olive\Documents\GitHub\SnakeGame\Framework\Framework\Helpers.cpp(36,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Main.cpp
+  MainMenu.cpp
+  ParticleGenerator.cpp
+  ParticleObject.cpp
+  ScoreDisplay.cpp
+  ScoreManager.cpp
+  Snake.cpp
+  SnakeHead.cpp
+  SnakeSegment.cpp
+  SnakeTail.cpp
+  StringObject.cpp
+  UIManager.cpp
+  WallManager.cpp
   Generating Code...
   Framework.vcxproj -> C:\Users\olive\Documents\GitHub\SnakeGame\Framework\Debug\Framework.exe
