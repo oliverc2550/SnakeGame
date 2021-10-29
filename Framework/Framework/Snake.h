@@ -23,13 +23,13 @@ class Snake
 {
 private:
 	//Declared variable to store the bool value of m_isAlive, used to determine if the snake is alive and if the game should end
-	bool m_isAlive;
+	bool		m_isAlive;
 	//Instance of Direction enum
-	Direction m_inputDirection;
+	Direction	m_inputDirection;
 	//Instance of SnakeHead
-	SnakeHead m_head;
+	SnakeHead	m_head;
 	//Instance of SnakeTail
-	SnakeTail m_tail;
+	SnakeTail	m_tail;
 
 public:
 	//Constructors and Destructor

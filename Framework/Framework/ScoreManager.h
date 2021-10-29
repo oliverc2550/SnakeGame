@@ -21,13 +21,13 @@ class ScoreManager
 {
 private:
 	//Declared const variable to store the int value of m_fruitScoreIncrease, used to increase score by a set amount
-	const int m_fruitScoreIncrease = 10;
+	const int		m_fruitScoreIncrease	= 10;
 	//Declared const variable to store the int value of m_lengthScoreIncrease, used to increase score by a set amount
-	const int m_lengthScoreIncrease = 20;
+	const int		m_lengthScoreIncrease	= 20;
 	//Declared variable to store the int value of m_lengthCounter, used to mirror the increases of the snakes tail length and add points based on the number of segments
-	int m_lengthCounter = 0;
+	int				m_lengthCounter			= 0;
 	//Instance of ScoreDisplay
-	ScoreDisplay m_scoreDisplay;
+	ScoreDisplay	m_scoreDisplay;
 
 public:
 	//Constructor and Destructor

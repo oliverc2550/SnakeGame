@@ -1,15 +1,23 @@
 #include "Vector2.h"
 
+//Default Constructor
 Vector2::Vector2()
 {
 	m_x = 0;
 	m_y = 0;
 }
 
+//Overloaded Constructor
 Vector2::Vector2( int x, int y )
 {
 	m_x = x;
 	m_y = y;
+}
+
+//Default Destructor
+Vector2::~Vector2()
+{
+
 }
 
 bool Vector2::operator==( Vector2 vector2 )

@@ -24,6 +24,7 @@ public:
 	//Constructor and Destructor
 	Vector2();
 	Vector2( int x, int y );
+	~Vector2();
 
 //#######################################################
 //    Function    :    operator==

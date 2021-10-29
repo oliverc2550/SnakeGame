@@ -20,9 +20,9 @@ class SnakeTail
 {
 private:
 	//Declared variable to store the int value of m_length, used to easily add segments to the end of the snake
-	int m_length = 0;
+	int				m_length = 0;
 	//Array of SnakeSegments used to store the displayed color and their position
-	SnakeSegment m_tail[ k_SnakeTailMaxLength ];
+	SnakeSegment	m_tail[ k_SnakeTailMaxLength ];
 
 public:
 	//Constructor and Destructor

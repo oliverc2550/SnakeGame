@@ -2,6 +2,7 @@
 #include "Fruit.h"
 #include "Settings.h"
 
+//Default Constructor
 Fruit::Fruit()
 {
 	m_position = Vector2();
@@ -9,6 +10,7 @@ Fruit::Fruit()
 	m_isActive = true;
 }
 
+//Overloaded Constructor
 Fruit::Fruit( Vector2 &position, int colorValue, bool isActive )
 {
 	m_position = position;
@@ -16,6 +18,7 @@ Fruit::Fruit( Vector2 &position, int colorValue, bool isActive )
 	m_isActive = isActive;
 }
 
+//Virtual
 Fruit::~Fruit()
 {
 
@@ -37,7 +40,7 @@ void Fruit::reactivate()
 
 void Fruit::setRandomPosition()
 {
-	m_position = Vector2( Maths::getRandomInt( k_FruitMaxXPosition ), Maths::getRandomInt( k_FruitMaxYPosition ) ); //TODO: Remove magic numbers Settings.H for const numbers
+	m_position = Vector2( Maths::getRandomInt( k_FruitMaxXPosition ), Maths::getRandomInt( k_FruitMaxYPosition ) );
 }
 
 void Fruit::update()

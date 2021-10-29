@@ -5,6 +5,7 @@
 #include "Helpers.h"
 #include "Vector2.h"
 
+//Default Constructor
 Game::Game() 
 {
 	GameWindow::initializeGameWindow();
@@ -20,6 +21,7 @@ void Game::checkWallCollisions()
 
 void Game::checkFruitCollisions()
 {
+	//Checks if the snake and fruit have the same position and then runs the code to manage what happens when the player collects the fruit
 	if( m_snake.getHeadPosition() == m_fruit.getPosition() )
 	{
 		playSound( Sounds::Pickup );
@@ -48,6 +50,8 @@ void Game::checkCollisions()
 
 void Game::initializeLevel()
 {
+	//Runs code that only needs to be run once at the start of the level
+
 	m_wallManager.render();
 	m_fruit.setRandomPosition();
 	if( m_gameOverScreenLoaded )
@@ -96,10 +100,14 @@ void Game::unrender()
 void Game::run()
 {
 	Maths::initializeRand();
+
+	//Gameloop
 	while( true )
 	{
+		//Switches what the game does based on the gamestate
 		switch( currentState )
 		{
+			//Main Menu Loop
 			case GameState::MainMenu:
 				{
 					if( !m_mainMenuLoaded )
@@ -112,17 +120,18 @@ void Game::run()
 				}
 				break;
 
+			//Game Play Loop
 			case GameState::Playing:
 				{
-					// Game loop
 					unrender();
 					update();
 					render();
 
-					Sleep( 85 );
+					Sleep( k_gameSleepRate );
 				}
 				break;
-
+			
+			//Game Over Loop
 			case GameState::GameOver:
 				{
 					if( !m_gameOverScreenLoaded )

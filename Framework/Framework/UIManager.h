@@ -16,9 +16,9 @@ class UIManager
 private:
 	//Member Variables
 	//Instance of MainMenu
-	MainMenu m_mainMenu;
+	MainMenu		m_mainMenu;
 	//Instance of GameOverScreen
-	GameOverScreen m_gameOverScreen;
+	GameOverScreen	m_gameOverScreen;
 
 public:
 //#######################################################

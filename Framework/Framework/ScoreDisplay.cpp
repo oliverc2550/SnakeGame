@@ -1,6 +1,7 @@
 #include "ScoreDisplay.h"
 #include "Settings.h"
 
+//Default Constructor
 ScoreDisplay::ScoreDisplay()
 {
 	m_position = Vector2( 0, k_ScoreDisplayPosition );
@@ -8,6 +9,7 @@ ScoreDisplay::ScoreDisplay()
 	m_scoreValue = 0;
 }
 
+//Overloaded Constructor
 ScoreDisplay::ScoreDisplay( Vector2& position, std::string string, int scoreValue )
 {
 	m_position = position;
@@ -15,6 +17,7 @@ ScoreDisplay::ScoreDisplay( Vector2& position, std::string string, int scoreValu
 	m_scoreValue = scoreValue;
 }
 
+//Virtual
 ScoreDisplay::~ScoreDisplay()
 {
 

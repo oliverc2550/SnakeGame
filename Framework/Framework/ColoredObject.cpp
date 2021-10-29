@@ -1,6 +1,6 @@
 #include "ColoredObject.h"
 
-//Virtual
+
 void ColoredObject::update()
 {
 	GameObject::update();

@@ -1,17 +1,21 @@
 #include "WallManager.h"
 
+//Default Constructor
 WallManager::WallManager()
 {
 	initializeWalls();
 }
 
+//Default Destructor
 WallManager::~WallManager()
 {
 }
 
 //Private Methods
+
 void WallManager::setWallPosition( Brick wallToSet[], int wallArraySize, bool isWallHorizontal, int startingXpos, int startingYpos )
 {
+	//Loops over array to set position, changes whether the X or Y position is incremented based on passed in value
 	for( int i = 0; i < wallArraySize; i++ )
 	{
 		if( isWallHorizontal )
@@ -56,6 +60,7 @@ void WallManager::initializeWalls()
 }
 
 //Public Methods
+
 void WallManager::render()
 {
 	drawWall( m_wallTop, k_WallMaxHorizontalSize );

@@ -1,10 +1,12 @@
 #include "ScoreManager.h"
 
+//Default Constructor
 ScoreManager::ScoreManager()
 {
 
 }
 
+//Default Destructor
 ScoreManager::~ScoreManager()
 {
 
@@ -12,6 +14,7 @@ ScoreManager::~ScoreManager()
 
 void ScoreManager::update()
 {
+	//Increases Score if counter is more or eqaul to five, resets value after increasing score
 	if( m_lengthCounter >= 5 )
 	{
 		int scoreValue = m_scoreDisplay.getScoreValue();

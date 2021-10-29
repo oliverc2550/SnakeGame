@@ -1,16 +1,19 @@
 #include "Settings.h"
 #include "SnakeTail.h"
 
+//Default Constructor
 SnakeTail::SnakeTail()
 {
 }
 
+//Default Destructor
 SnakeTail::~SnakeTail()
 {
 }
 
 void SnakeTail::move( const SnakeSegment& snakeHead )
 {
+	//Loops through the array and then manually sets the first element to the passed in value's position
 	for( int i = m_length; i > 0; i-- )
 	{
 		m_tail[ i ].moveTo( m_tail[ i - 1 ] );
@@ -30,6 +33,8 @@ void SnakeTail::unrender()
 
 void SnakeTail::addSegments()
 {
+	//Gets the end position using m_length and then assigns an array element to that position. Increments m_length after adding element
+
 	Vector2 endPosition = m_tail[ m_length ].getPosition();
 	m_tail[ m_length ].setPosition( endPosition );
 	m_length++;

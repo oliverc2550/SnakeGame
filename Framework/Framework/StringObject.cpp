@@ -1,14 +1,18 @@
 #include "StringObject.h"
 
+//Default Constructor
 StringObject::StringObject()
 {
+	m_stringToRender = " ";
+	m_position = Vector2();
 }
 
+//Virtual
 StringObject::~StringObject()
 {
 }
 
-//Virtual
+
 void StringObject::update()
 {
 	GameObject::update();

@@ -37,22 +37,22 @@ private:
 	};
 	// Member Variables
 	//Instance of GameState
-	GameState currentState = GameState::MainMenu;
+	GameState			currentState = GameState::MainMenu;
 	//Instance of UIManager
-	UIManager m_uiManager;
+	UIManager			m_uiManager;
 	//Instance of Snake
-	Snake m_snake;
+	Snake				m_snake;
 	//Instance of Fruit
-	Fruit m_fruit;
+	Fruit				m_fruit;
 	//Instance of ParticleGenerator
-	ParticleGenerator m_particleGenerator;
+	ParticleGenerator	m_particleGenerator;
 	//Instance of ScoreManager
-	ScoreManager m_scoreManager;
+	ScoreManager		m_scoreManager;
 	//Instance of WallManager
-	WallManager m_wallManager;
+	WallManager			m_wallManager;
 
 	//bool used to determine if the Main Menu has already been loaded so the game doesn't constantly redraw it
-	bool m_mainMenuLoaded = false;
+	bool m_mainMenuLoaded		= false;
 	//bool used to determine if the Game Over Screen has already been loaded so the game doesn't constantly redraw it
 	bool m_gameOverScreenLoaded = false;
 

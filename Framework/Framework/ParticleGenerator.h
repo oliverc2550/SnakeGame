@@ -27,7 +27,7 @@ private:
 
 //#######################################################
 //    Function    :    setChar()
-//    Purpose     :    To set the cahr value of all of the particles within the array
+//    Purpose     :    To set the char value of all of the particles within the array
 //    Parameters  :    None
 //    Returns     :    void
 //    Notes       :	   Called in the constructor so that the chars can be set at declaration

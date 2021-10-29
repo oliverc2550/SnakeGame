@@ -3,6 +3,7 @@
 #include "Settings.h"
 #include "Snake.h"
 
+//Default Constructor
 Snake::Snake()
 {
 	m_isAlive = true;
@@ -11,6 +12,7 @@ Snake::Snake()
 	m_head.setPosition( startingPosition );
 }
 
+//Overloaded Constructor
 Snake::Snake( Vector2 startingPosition )
 {
 	m_isAlive = true;
@@ -18,12 +20,14 @@ Snake::Snake( Vector2 startingPosition )
 	m_head.setPosition( startingPosition );
 }
 
+//Default Destructor
 Snake::~Snake()
 {
 }
 
 void Snake::checkInput()
 {
+	//Checks for keyboard input. Doesn't allow the "opposite key" to be pressed so that the player can't mistakenly kill themselves
 	if ( Keyboard::checkButton( 'a' ) )
 	{
 		if( m_inputDirection != Direction::Right )
@@ -56,6 +60,7 @@ void Snake::checkInput()
 
 void Snake::move( Direction m_inputDirection )
 {
+	//Gets the X and Y values separately so that they can be incremented to move the snake
 	int xPos = m_head.getPosition().getX();
 	int yPos = m_head.getPosition().getY();
 
@@ -115,6 +120,7 @@ void Snake::addSegments()
 
 void Snake::reset()
 {
+	//Resets all relevant snake values so the player can restart the game
 	m_isAlive = true;
 	m_inputDirection = Direction::Null;
 	Vector2 startingPosition = Vector2( k_SnakeDefaultXPosition, k_SnakeDefaultYPosition );
