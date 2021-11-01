@@ -112,7 +112,7 @@ void Game::run()
 				{
 					if( !m_mainMenuLoaded )
 					{
-						//playSound( Sounds::BackgroundMusic );
+						playSound( Sounds::BackgroundMusic );
 						m_uiManager.loadMainMenu();
 						m_mainMenuLoaded = true;
 					}
@@ -137,7 +137,7 @@ void Game::run()
 					if( !m_gameOverScreenLoaded )
 					{
 						system( "cls" );
-						//playSound( Sounds::BackgroundMusic );
+						playSound( Sounds::BackgroundMusic );
 						m_uiManager.loadGameOverScreen();
 						m_gameOverScreenLoaded = true;
 					}
